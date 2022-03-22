@@ -11,12 +11,9 @@
 @link__text-decoration: underline;
 @bold-text__font-weight: 500px;
 
-
-
-
-.media-width(@extremum, @break) when (@extremum ='') and (@break =@screen__m) {
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     h1 {
-        font-feature-settings: Playfair Display;
+        font-family: Playfair Display;
         font-size: 48px;
         line-height: 50px;
         letter-spacing: -1px;
@@ -34,6 +31,7 @@
         font-size: 24px;
         letter-spacing: -0.25px;
         line-height: 30px;
+        font-weight: 400;
     }
 
     h4 {
@@ -194,26 +192,38 @@
         content: none;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="email"] {
         outline: 0;
         border-width: 0 0 1px;
         border-color: #ccc;
         padding: 10px 0;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
+        font-family: Avenir;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: -.25px;
+
+        &:invalid {
+            outline: 0;
+            border-color: #FF0000;
+            box-shadow: none;
+        }
+
+        &:focus {
+            outline: 0;
+            border-color: @color-black;
+            box-shadow: none;
+        }
     }
 
-    input[type="text"]:focus {
-        outline: 0;
-        border-color: @color-black;
-        box-shadow: none;
-    }
-
-    input[type="text"]:invalid {
-        outline: 0;
-        border-color: #FF0000;
-        box-shadow: none;
-    }
-
+    
     .page-header .panel .wapper {
         background-color: black;
     }
@@ -475,10 +485,10 @@
 
     //Notification Banners
 
-    .block-noti {
-        // color: @color-white;
-        // text-transform: uppercase;
-    }
+    // .block-noti {
+    //     // color: @color-white;
+    //     // text-transform: uppercase;
+    // }
 
     //block-inputs
     .inputs-detail {
@@ -489,9 +499,9 @@
                 border-color: @color-black;
             }
 
-            input:nth-child(4) {
-                // border-color: #FF0000;
-            }
+            // input:nth-child(4) {
+            //     // border-color: #FF0000;
+            // }
 
             // input:nth-child(4):invalid{
             //     border-color: yellow;

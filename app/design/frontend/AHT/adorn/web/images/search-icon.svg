@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>A9C4D5D5-30EE-4F63-A759-A7A1A36A3E84</title>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="styleguide_v01" transform="translate(-99.000000, -2354.000000)" stroke="#000000">
+            <g id="Icons" transform="translate(95.000000, 2301.000000)">
+                <g transform="translate(0.000000, 52.000000)" id="search-icon">
+                    <g transform="translate(5.000000, 2.000000)">
+                        <circle id="Oval" cx="7.11111111" cy="7.11111111" r="7.11111111"></circle>
+                        <line x1="16" y1="16" x2="12.1333333" y2="12.1333333" id="Path"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

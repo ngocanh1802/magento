@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>5C5D4268-8767-4FE7-893B-4F0AB3CCD6B4</title>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="styleguide_v01" transform="translate(-139.000000, -2354.000000)" stroke="#000000">
+            <g id="Icons" transform="translate(95.000000, 2301.000000)">
+                <g transform="translate(0.000000, 52.000000)" id="heart-icon">
+                    <path d="M54,18 C59.6897143,14.160029 63,10.2876316 63,6.44766059 L63,6.4160875 C62.982,3.95935939 60.9677143,1.98220099 58.5,2 C56.5397143,2 54.6428571,3.24768477 54,4.97567171 C53.3571429,3.24768477 51.4611429,2 49.5,2 C47.0322857,1.98220099 45.018,3.95935939 45,6.4160875 L45,6.44766059 C45,10.2876316 48.3102857,14.160029 54,18 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

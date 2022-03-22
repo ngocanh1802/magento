@@ -6,19 +6,75 @@
  */
 -->
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <!-- <update handle="default_head_blocks"/> -->
     <body>
+        //remove and move blocks
         <referenceBlock name="register-link" remove ="true"/>
-        <!-- <move element="top.search" destination="header-top-container" before="-"/> -->
+        <referenceBlock name="footer_links" remove ="true"/>
+        <move element="top.search" destination="header-wrapper" before="-"/>
+        <move element="store_language" destination="header.panel" before="top.links"/>
+        <move element="header.links" destination="header.panel" after="-"/>
+        <!-- <move element="wish-list-link" destination="header-wapper" before="minicart"/> -->
+        <move element="header-content" destination="header-wrapper" before="minicart"/>
+        <move element ="footer-top" destination ="footer-container" before="-"/>
+        <move element="form.subscribe" destination="footer-top-container" after="-"/>
+        <move element ="footer-bot" destination ="footer-container" after="-"/>
+
+        //demo styleguide
         <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\Template" name="styleguide" template="Magento_Theme::styleguide.phtml"/>
         </referenceContainer>
+
+        //add header top block
         <referenceContainer name="header.panel">
-            <!-- <block class="Magento\Framework\View\Element\Template" name="header-top-center" before ="-" template="Magento_Theme::header_top.phtml"/> -->
             <container name="header-top-container" htmlTag="div" htmlClass="header-top-center">
                 <block class="Magento\Cms\Block\Block" name="header-top-center">
                     <arguments>
                         <argument name="block_id" xsi:type="string">header-top-center</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header-wrapper">
+            <container name="header-content" htmlTag="div" htmlClass="mini-wishlist">
+                <block class="Magento\Cms\Block\Block" name="mini-wishlist">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">mini-wishlist</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="footer-container">
+            <container name="footer-top" htmlTag="div" htmlClass="footer-top">
+                <container name="footer-top-container" htmlTag="div" htmlClass="footer-top-container">
+                    <block class="Magento\Cms\Block\Block" name="footer-top-text">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-top</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+            <container name="footer-bot" htmlTag="div" htmlClass="footer-bot">
+                <container name="footer-bot-container" htmlTag="div" htmlClass="footer-bot-container">
+                    <block class="Magento\Cms\Block\Block" name="footer-bottom">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-bottom</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <container name="footer-links" htmlTag="div" htmlClass="footer-links">
+                <block class="Magento\Cms\Block\Block" name="footer-link">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-link</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="footer-social-info" htmlTag="div" htmlClass="footer-social-info">
+                <block class="Magento\Cms\Block\Block" name="footer-social">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-social</argument>
                     </arguments>
                 </block>
             </container>
