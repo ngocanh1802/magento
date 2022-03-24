@@ -62,6 +62,8 @@
         color: @color-black;
 
     }
+
+
 }
 
 & when (@media-common =true) {
@@ -81,6 +83,7 @@
         color: @color-black;
     }
 
+    //button style guide
     button {
         border-radius: 0;
         text-transform: uppercase;
@@ -96,12 +99,13 @@
         line-height: 16px;
         text-align: center;
 
+        &:hover {
+            background-color: @primary__color;
+            border: none;
+        }
     }
 
-    .action.primary:hover {
-        background-color: #F4868B;
-        border: none;
-    }
+
 
     .hollow {
         box-sizing: border-box;
@@ -114,13 +118,14 @@
         letter-spacing: 1px;
         line-height: 16px;
         text-align: center;
+
+        &:hover {
+            background-color: @color-black;
+            color: @color-white;
+            border: none;
+        }
     }
 
-    .hollow:hover {
-        background-color: @color-black;
-        color: @color-white;
-        border: none;
-    }
 
     .secondary {
         color: @primary__color;
@@ -132,13 +137,12 @@
         text-align: center;
         border: none;
         box-shadow: none;
-    }
 
-    .secondary:hover {
-        color: @color-black;
-        border: none;
-        box-shadow: none;
-        ;
+        &:hover {
+            color: @color-black;
+            border: none;
+            box-shadow: none;
+        }
     }
 
     .inactive {
@@ -154,6 +158,27 @@
         text-align: center;
     }
 
+    //messages
+    .page.messages {
+        position: relative;
+
+        .rm-mes {
+            line-height: 1;
+            cursor: pointer;
+            position: absolute;
+            right: 24px;
+            top: 18px;
+
+            &:after {
+                display: block;
+                content: "";
+                background-image: url(../images/times-icon.svg);
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+
     .message.success {
         text-align: center;
         padding: 14px 0;
@@ -167,6 +192,9 @@
         color: @color-white;
         text-transform: uppercase;
 
+        >*:first-child:before {
+            content: none;
+        }
     }
 
     .message.error {
@@ -182,48 +210,108 @@
         color: @color-white;
         text-transform: uppercase;
 
-    }
-
-    .message.success>*:first-child:before {
-        content: none;
-    }
-
-    .message.error>*:first-child:before {
-        content: none;
-    }
-
-    input[type="text"],
-    input[type="password"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="search"],
-    input[type="number"],
-    input[type="datetime"],
-    input[type="email"] {
-        outline: 0;
-        border-width: 0 0 1px;
-        border-color: #ccc;
-        padding: 10px 0;
-        // margin-bottom: 20px;
-        font-family: Avenir;
-        font-weight: 300;
-        font-size: 16px;
-        letter-spacing: -.25px;
-
-        &:invalid {
-            outline: 0;
-            border-color: #FF0000;
-            box-shadow: none;
-        }
-
-        &:focus {
-            outline: 0;
-            border-color: @color-black;
-            box-shadow: none;
+        >*:first-child:before {
+            content: none;
         }
     }
 
-    
+    //form input
+    .form .control {
+        position: relative;
+
+        input[type="text"],
+        input[type="password"],
+        input[type="url"],
+        input[type="tel"],
+        input[type="search"],
+        input[type="number"],
+        input[type*="date"],
+        input[type="email"],
+        input:not([type=checkbox]):not([type=radio]),
+        textarea {
+            background: #fff;
+            color: #000000;
+            font-family: Avenir;
+            font-size: 16px;
+            font-weight: 300;
+            height: 48px;
+            line-height: 26px;
+            padding: 15px 0 5px;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #CCC;
+            border-width: 0 0 1px;
+
+
+
+            &~label,
+            &~.label {
+                position: absolute;
+                top: 11px;
+                left: 0;
+                font-family: Avenir;
+                font-size: 16px;
+                font-weight: 300;
+                letter-spacing: -0.25px;
+                line-height: 26px;
+                transition: 0.2s;
+                z-index: 3;
+            }
+
+            &:invalid {
+                outline: 0;
+                border-color: #FF0000;
+                box-shadow: none;
+            }
+
+            &:focus {
+                outline: 0;
+                border-color: @color-black;
+                box-shadow: none;
+            }
+
+            &:not(:placeholder-shown) {
+
+                &~label,
+                &~.label {
+                    color: #828282;
+                    top: 0;
+                    font-size: 12px;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                    line-height: 12px;
+                }
+            }
+
+
+
+
+
+        }
+
+        input:focus:not([type='checkbox']):not([type='radio']):not(:placeholder-shown)~.label,
+        textarea:focus:not(:placeholder-shown)~.label,
+        input:not([type='checkbox']):not([type='radio']):focus~.label,
+        textarea:focus~.label,
+        input:not([type='checkbox']):not([type='radio']):active~.label,
+        textarea:focus:active~.label input:not(:placeholder-shown)~label,
+        textarea:focus:not(:placeholder-shown)~label,
+        input:not([type='checkbox']):not([type='radio']):focus~label,
+        textarea:focus~label,
+        input:not([type='checkbox']):not([type='radio']):active~label,
+        textarea:active~label {
+            top: 0;
+            color: #000;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 12px;
+        }
+
+
+    }
+
+
     .page-header .panel .wapper {
         background-color: black;
     }

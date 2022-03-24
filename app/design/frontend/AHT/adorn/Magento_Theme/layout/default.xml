@@ -10,9 +10,14 @@
         //remove and move blocks
         <referenceBlock name="register-link" remove ="true"/>
         <referenceBlock name="footer_links" remove ="true"/>
+        <referenceBlock name="copyright" remove ="true"/>
+        <referenceContainer name="compare-link-wrapper" display="false"/>
+        
+        
         <move element="top.search" destination="header-wrapper" before="-"/>
         <move element="store_language" destination="header.panel" before="top.links"/>
         <move element="header.links" destination="header.panel" after="-"/>
+        
         <!-- <move element="wish-list-link" destination="header-wapper" before="minicart"/> -->
         <move element="header-content" destination="header-wrapper" before="minicart"/>
         <move element ="footer-top" destination ="footer-container" before="-"/>
@@ -34,6 +39,8 @@
                 </block>
             </container>
         </referenceContainer>
+
+        //add mini-wishlist
         <referenceContainer name="header-wrapper">
             <container name="header-content" htmlTag="div" htmlClass="mini-wishlist">
                 <block class="Magento\Cms\Block\Block" name="mini-wishlist">
@@ -43,6 +50,8 @@
                 </block>
             </container>
         </referenceContainer>
+
+        //add footer-top, footer bottom
         <referenceContainer name="footer-container">
             <container name="footer-top" htmlTag="div" htmlClass="footer-top">
                 <container name="footer-top-container" htmlTag="div" htmlClass="footer-top-container">
