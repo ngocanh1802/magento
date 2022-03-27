@@ -12,12 +12,9 @@
         <referenceBlock name="footer_links" remove ="true"/>
         <referenceBlock name="copyright" remove ="true"/>
         <referenceContainer name="compare-link-wrapper" display="false"/>
-        
-        
         <move element="top.search" destination="header-wrapper" before="-"/>
         <move element="store_language" destination="header.panel" before="top.links"/>
         <move element="header.links" destination="header.panel" after="-"/>
-        
         <!-- <move element="wish-list-link" destination="header-wapper" before="minicart"/> -->
         <move element="header-content" destination="header-wrapper" before="minicart"/>
         <move element ="footer-top" destination ="footer-container" before="-"/>
@@ -25,9 +22,9 @@
         <move element ="footer-bot" destination ="footer-container" after="-"/>
 
         //demo styleguide
-        <referenceContainer name="content">
+        <!-- <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\Template" name="styleguide" template="Magento_Theme::styleguide.phtml"/>
-        </referenceContainer>
+        </referenceContainer> -->
 
         //add header top block
         <referenceContainer name="header.panel">
